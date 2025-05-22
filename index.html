@@ -7,26 +7,25 @@
     <title>PAYG</title>
     <script type="text/javascript">
       // Handle redirect from the 404.html page
-      (function() {
-        // Parse the URL query parameters
+      (function () {
         const query = window.location.search.substr(1);
         const params = {};
-        query.split('&').forEach(function(param) {
-          const pair = param.split('=');
-          params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+        query.split("&").forEach(function (param) {
+          const pair = param.split("=");
+          params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || "");
         });
 
-        // If we have a redirect parameter, navigate to that path
+        // If we have a redirect query, force reload to the path
         if (params.redirect) {
           const redirectPath = params.redirect;
-          window.history.replaceState(null, null, '/paygi/' + redirectPath);
+          window.location.replace("/paygi/" + redirectPath);
         }
 
-        // Check for stored path in localStorage as fallback
-        const storedPath = window.localStorage.getItem('redirect_path');
+        // Fallback: Check for stored path in localStorage
+        const storedPath = window.localStorage.getItem("redirect_path");
         if (storedPath && !params.redirect) {
-          window.localStorage.removeItem('redirect_path');
-          window.history.replaceState(null, null, '/paygi/' + storedPath);
+          window.localStorage.removeItem("redirect_path");
+          window.location.replace("/paygi/" + storedPath);
         }
       })();
     </script>
