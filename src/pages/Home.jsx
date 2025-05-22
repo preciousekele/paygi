@@ -1,8 +1,9 @@
-import logo from './images/Logopagy.png';
+import logo from "./images/Logopagy.png";
 import "boxicons";
 import "boxicons/css/boxicons.min.css";
 import "./home.css";
-import Hero from './hero/Hero';
+import Hero from "./hero/Hero";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -20,35 +21,30 @@ const Header = () => {
             <span className="nav__logo-circle">
               <img src={logo} alt="logo" />
             </span>
-            <span className="nav__logo-name">
-            PayG
-            </span>
+            <span className="nav__logo-name">PayG</span>
           </a>
 
           <div className="nav__menu" id="nav-menu">
             <ul className="nav__list">
               <li className="nav__item">
-                <a href="#home" className="nav__link active-link" >
+                <a href="#home" className="nav__link active-link">
                   Home
                 </a>
               </li>
-              <li className="nav__item" >
-                <a href="#" className="nav__link" >
+              <li className="nav__item">
+                <a href="#" className="nav__link">
                   About
                 </a>
               </li>
-              <li className="nav__item" >
-                <a href="#" className="nav__link" >
+              <li className="nav__item">
+                <a href="#" className="nav__link">
                   Packages
                 </a>
               </li>
-              <li className="nav__item" >
-                <a
-                  href="/register"
-                  className="nav__link-button"
-                >
-                   <i className="bx bx-log-in"></i>
-                </a>
+              <li className="nav__item">
+                <Link to="/register" className="nav__link-button">
+                  <i className="bx bx-log-in"></i>
+                </Link>
               </li>
             </ul>
 
@@ -58,7 +54,7 @@ const Header = () => {
           </div>
         </nav>
       </header>
-      <Hero/>
+      <Hero />
     </div>
   );
 };
