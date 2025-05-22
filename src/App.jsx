@@ -33,7 +33,7 @@ const MainRoutes = () => {
     }
   }, []);
 
-  const allowedPaths = ["/", "/paygi/register", "/login"];
+  const allowedPaths = ["/", "/register", "/login"];
   const isInitialLoad =
     allowedPaths.includes(location.pathname) && showPreloader;
 
@@ -45,7 +45,7 @@ const MainRoutes = () => {
         <Routes location={location}>
           <Route path="/paygi/" element={<Home />} />
           <Route path="/paygi/register" element={<LoginSignup />} />
-          <Route path="*" element={<Navigate to="/PayG/" />} />
+          <Route path="*" element={<Navigate to="/paygi/" />} />
         </Routes>
       )}
     </>
