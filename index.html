@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="./public/Logopagy.png" type="image/png" />
+    <link rel="icon" href="/Logopagy.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PAYG</title>
     <script type="text/javascript">
@@ -19,20 +19,20 @@
         // If we have a redirect parameter, navigate to that path
         if (params.redirect) {
           const redirectPath = params.redirect;
-          window.history.replaceState(null, null, '/PayG/' + redirectPath);
+          window.history.replaceState(null, null, '/paygi/' + redirectPath);
         }
 
         // Check for stored path in localStorage as fallback
         const storedPath = window.localStorage.getItem('redirect_path');
         if (storedPath && !params.redirect) {
           window.localStorage.removeItem('redirect_path');
-          window.history.replaceState(null, null, '/PayG/' + storedPath);
+          window.history.replaceState(null, null, '/paygi/' + storedPath);
         }
       })();
     </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <<script type="module" src="./src/main.jsx"></script>
   </body>
 </html>
