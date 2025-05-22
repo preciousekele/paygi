@@ -43,9 +43,9 @@ const MainRoutes = () => {
         <Preloader />
       ) : (
         <Routes location={location}>
-          <Route path="/paygi/" element={<Home />} />
-          <Route path="/paygi/register" element={<LoginSignup />} />
-          <Route path="*" element={<Navigate to="/paygi/" />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<LoginSignup />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       )}
     </>
